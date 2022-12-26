@@ -21,7 +21,7 @@ export default function Home() {
           <div className="text-5xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Anime :-</p>
           </div>
-          <div className="flex">
+          <div className="grid-container">
             {getdata?.Anime?.map((item) => {
               console.log("item", item);
 
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="text-5xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Nature :-</p>
           </div>
-          <div className="flex w-full  h-full">
+          <div className="grid-container ">
             {getdata?.Nature?.map((item) => {
               console.log("item", item);
 

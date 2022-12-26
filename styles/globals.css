@@ -43,3 +43,9 @@ body {
 .for-background-color-yellownewone:hover{
   box-shadow: 0 10px 15px -3px rgba(242, 205, 56, 0.918), 0 4px 6px -4px rgba(255, 239, 63, 0.716);
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
