@@ -7,45 +7,81 @@ body {
   overflow-x: hidden;
   padding-bottom: 100px;
 }
-.for-background-color{
+.for-background-color {
   backdrop-filter: blur(10px);
-  --tw-shadow: 0px 1px 24px rgba(0,0,0,.05);
+  --tw-shadow: 0px 1px 24px rgba(0, 0, 0, 0.05);
   --tw-shadow-colored: 0px 1px 24px var(--tw-shadow-color);
   --tw-bg-opacity: 0.6;
-  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   width: 490px;
   /* border-radius: 6px; */
   height: 80px;
   margin-top: 120px;
 }
-.for-background-color:hover{
-  box-shadow: 0 10px 15px -3px rgba(187, 10, 187, 0.918), 0 4px 6px -4px rgba(177, 10, 244, 0.1);
-  
+.model-background-color {
+ 
+  width: 920px;
+  /* background-color: #F8BBD0; */
+  /* border-radius: 6px; */
+  height:340px;
+  margin-top: 250px;
 }
-.for-background-color-one:hover{
-  box-shadow: 0 10px 15px -3px rgba(187, 10, 10, 0.918), 0 4px 6px -4px rgba(179, 34, 34, 0.902);
+.for-background-color:hover {
+  box-shadow: 0 10px 15px -3px rgba(187, 10, 187, 0.918),
+    0 4px 6px -4px rgba(177, 10, 244, 0.1);
 }
-.for-background-color-two:hover{
-  box-shadow: 0 10px 15px -3px rgba(54, 215, 36, 0.918), 0 4px 6px -4px rgba(18, 244, 10, 0.414);
+.for-background-color-one:hover {
+  box-shadow: 0 10px 15px -3px rgba(187, 10, 10, 0.918),
+    0 4px 6px -4px rgba(179, 34, 34, 0.902);
 }
-.for-background-color-new:hover{
-  box-shadow: 0 10px 15px -3px rgba(45, 89, 234, 0.918), 0 4px 6px -4px rgba(17, 0, 255, 0.716);
+.for-background-color-two:hover {
+  box-shadow: 0 10px 15px -3px rgba(54, 215, 36, 0.918),
+    0 4px 6px -4px rgba(18, 244, 10, 0.414);
 }
-.for-background-color-newone:hover{
-  box-shadow: 0 10px 15px -3px rgba(211, 10, 134, 0.918), 0 4px 6px -4px rgba(255, 0, 157, 0.716);
+.for-background-color-new:hover {
+  box-shadow: 0 10px 15px -3px rgba(38, 78, 213, 0.918),
+    0 4px 6px -4px rgba(17, 0, 255, 0.716);
 }
-.for-background-color-onenewone:hover{
-  box-shadow: 0 10px 15px -3px rgba(236, 31, 31, 0.599), 0 4px 6px -4px rgba(168, 0, 103, 0.716);
+.for-background-color-newone:hover {
+  box-shadow: 0 10px 15px -3px rgba(211, 10, 134, 0.918),
+    0 4px 6px -4px rgba(255, 0, 157, 0.716);
 }
-.for-background-color-oneoene:hover{
-  box-shadow: 0 10px 15px -3px rgba(211, 171, 10, 0.918), 0 4px 6px -4px rgba(226, 209, 20, 0.716);
+.for-background-color-onenewone:hover {
+  box-shadow: 0 10px 15px -3px rgba(236, 31, 31, 0.599),
+    0 4px 6px -4px rgba(168, 0, 103, 0.716);
 }
-.for-background-color-yellownewone:hover{
-  box-shadow: 0 10px 15px -3px rgba(242, 205, 56, 0.918), 0 4px 6px -4px rgba(255, 239, 63, 0.716);
+.for-background-color-oneoene:hover {
+  box-shadow: 0 10px 15px -3px rgba(211, 171, 10, 0.918),
+    0 4px 6px -4px rgba(226, 209, 20, 0.716);
+}
+.for-background-color-yellownewone:hover {
+  box-shadow: 0 10px 15px -3px rgba(242, 205, 56, 0.918),
+    0 4px 6px -4px rgba(255, 239, 63, 0.716);
 }
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
   /* background-color: #2196F3; */
   padding: 10px;
+}
+.fourth {
+  /* border-color: black; */
+  /* color: #fff; */
+  /* background-image: -webkit-linear-gradient(
+    45deg,
+    #030303 50%,
+    transparent 50%
+  ); */
+  width: 128px;
+  height: 48px;
+  background-image: linear-gradient(45deg, #d53381 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 1000ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+  color: white;
 }

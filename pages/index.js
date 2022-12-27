@@ -1,30 +1,33 @@
-import { data } from "autoprefixer";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import Model from "../components/model";
 export default function Home() {
+  const [getid, setGetid] = useState("");
+  const [cardmodel, setCardmodel] = useState(false);
   const [getdata, setGetdata] = useState([]);
-  const [getdataone, setGetdataone] = useState([]);
+  // const [getdataone, setGetdataone] = useState([]);
   useEffect(() => {
     axios.get("https://dev.center-piece.com/api/v1/skins/store").then((res) => {
       setGetdata(res.data.categoryData);
       // setGetdataone(res.data.categoryData);
     });
   }, []);
-  console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
+  // console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
   // console.log(getdatao , "udigubduigbruibg")
   // console.log(getdata, "hbsbjkbfgjf");
   return (
     <>
       <div className="text-white w-full h-full">
+        {cardmodel && <Model setCardmodel={setCardmodel} getid={getid}/>}
         <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Anime :-</p>
           </div>
           <div className="grid-container">
             {getdata?.Anime?.map((item) => {
               console.log("item", item);
-
+              // key= {keyid}
+              // console.log(item);
               return (
                 <>
                   <div className="flex justify-center w-full h-full">
@@ -61,6 +64,13 @@ export default function Home() {
                       >
                         {item?.skinMeta.find((e) => e.key == "rarity").value}
                       </p>
+                      <img
+                        onClick={() => {setCardmodel(true); 
+                          setGetid(item)
+                        }}
+                        className="w-[40px] cursor-pointer h-8 absolute ml-[420px] mt-[133px]"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/8674846_ic_fluent_eye_tracking_on_icon%20%281%29.png"
+                      />
                       <p className="font-bold text-slate-200 pl-10 pt-32 absolute ">
                         {item.description}
                       </p>
@@ -72,7 +82,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Nature :-</p>
           </div>
           <div className="flex">
@@ -128,7 +138,7 @@ export default function Home() {
       </div>
       <div className="text-white  w-full h-full">
         <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Movies & TV :-</p>
           </div>
           <div className="flex">
@@ -159,15 +169,25 @@ export default function Home() {
                         className={`${
                           item?.skinMeta.find((e) => e.key == "rarity").value ==
                           "LEGENDARY"
-                            ? " font-bold text-red-300 pl-10 pt-8 absolute for-background-color-one for-background-color rounded-b-md "
+                            ? " font-bold text-red-500 pl-10 pt-8 absolute for-background-color-one for-background-color rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "STANDARD"
+                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
+                            : item?.skinMeta.find((e) => e.key == "rarity")
+                                .value == "ULTRA"
                             ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
                             : "foidgub"
                         }`}
                       >
                         {item?.skinMeta.find((e) => e.key == "rarity").value}
                       </p>
+                      <img
+                        onClick={() => {setCardmodel(true); 
+                          setGetid(item)
+                        }}
+                        className="w-[40px] cursor-pointer h-8 absolute ml-[420px] mt-[133px]"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/8674846_ic_fluent_eye_tracking_on_icon%20%281%29.png"
+                      />
                       <p className="font-bold text-slate-200 pl-10 pt-32 absolute ">
                         {item.description}
                       </p>
@@ -179,7 +199,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Nature :-</p>
           </div>
           <div className="flex">
@@ -235,13 +255,12 @@ export default function Home() {
       </div>
       <div className="text-white  w-full h-full">
         <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Nature :-</p>
           </div>
           <div className="grid-container ">
             {getdata?.Nature?.map((item) => {
-              console.log("item", item);
-
+              console.log("seeingthatistheitem", item);
               return (
                 <>
                   <div className="flex justify-center w-full  h-full">
@@ -271,15 +290,15 @@ export default function Home() {
                                 .value == "STANDARD"
                             ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
-                            .value == "ULTRA"
-                        ? " font-bold text-pink-400 pl-10 pt-8 absolute for-background-color-newone for-background-color rounded-b-md "
+                                .value == "ULTRA"
+                            ? " font-bold text-pink-400 pl-10 pt-8 absolute for-background-color-newone for-background-color rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
-                            .value == "DELUXE"
-                        ? " font-bold text-red-500 pl-10 pt-8 absolute for-background-color-onenewone for-background-color rounded-b-md "
+                                .value == "DELUXE"
+                            ? " font-bold text-red-700 pl-10 pt-8 absolute for-background-color-onenewone for-background-color rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
-                            .value == "PREMIUM"
-                        ? " font-bold text-yellow-400 pl-10 pt-8 absolute for-background-color-yellownewone for-background-color rounded-b-md "
-                        : "foidgub"
+                                .value == "PREMIUM"
+                            ? " font-bold text-yellow-400 pl-10 pt-8 absolute for-background-color-yellownewone for-background-color rounded-b-md "
+                            : "foidgub"
                         }`}
                       >
                         {item?.skinMeta.find((e) => e.key == "rarity").value}
@@ -287,6 +306,13 @@ export default function Home() {
                       <p className="font-bold text-slate-200 pl-10 pt-32 absolute ">
                         {item.description}
                       </p>
+                      <img
+                        onClick={() => {setCardmodel(true); 
+                          setGetid(item)
+                        }}
+                        className="w-[40px] cursor-pointer h-8 absolute ml-[420px] mt-[133px]"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/8674846_ic_fluent_eye_tracking_on_icon%20%281%29.png"
+                      />
                     </div>
                   </div>
                 </>
@@ -295,7 +321,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div>
-          <div className="text-5xl pl-8 pt-8">
+          <div className="text-3xl pl-8 pt-8">
             <p className="font-bold text-slate-100"> Nature :-</p>
           </div>
           <div className="flex">
