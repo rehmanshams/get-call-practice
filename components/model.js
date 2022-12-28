@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 export default function model({ setCardmodel, getid }) {
-  console.log("Selected Item Data", getid.category);
-  return (
+  console.log("Selected Item Data", getid.skinMeta);
+  // console.log(newdata, "fksdbkhukgyuiubiuguibuiuyfg");
+  // let data = getid.skinMeta.map((_item) => {
+  //   return _item.value;
+  // });
+  // console.log("data",data)
+let myArray=[];
+        for (let index = 0; index < getid.skinMeta.length; index++) {
+      myArray.push(getid.skinMeta[index].value);
+    }
+    console.log("myArray", myArray);
+    return (
     <>
       <div
         className="relative z-20 w-full bg-zinc-500"
@@ -24,6 +34,9 @@ export default function model({ setCardmodel, getid }) {
                   "LEGENDARY" && getid.category == "Movies & TV"
               ? "bg-red-300 fixed inset-0  bg-opacity-70 transition-opacity"
               : getid?.skinMeta.find((e) => e.key == "rarity").value ==
+                  "ULTRA" && getid.title == "Moon Above Sky"
+              ? "bg-blue-300 fixed inset-0  bg-opacity-70 transition-opacity"
+              : getid?.skinMeta.find((e) => e.key == "rarity").value ==
                   "LEGENDARY" && getid.category == "Nature"
               ? "bg-yellow-200 fixed inset-0  bg-opacity-70 transition-opacity"
               : getid?.skinMeta.find((e) => e.key == "rarity").value ==
@@ -36,7 +49,7 @@ export default function model({ setCardmodel, getid }) {
                   "DELUXE" && getid.category == "Nature"
               ? "bg-red-300 fixed inset-0  bg-opacity-70 transition-opacity"
               : getid?.skinMeta.find((e) => e.key == "rarity").value ==
-                  "STANDARD" 
+                "STANDARD"
               ? "bg-blue-300 fixed inset-0  bg-opacity-70 transition-opacity"
               : "vkldnkj"
           }`}
@@ -87,6 +100,10 @@ export default function model({ setCardmodel, getid }) {
                             getid.category == "Movies & TV"
                           ? "font-bold text-red-600 pt-32 text-4xl shadow-2xl absolute model-background-color rounded-b-md "
                           : getid?.skinMeta.find((e) => e.key == "rarity")
+                              .value == "PREMIUM" &&
+                            getid.title == "Moon Above sky"
+                          ? "font-bold text-blue-400 pt-32 text-4xl shadow-2xl absolute model-background-color rounded-b-md "
+                          : getid?.skinMeta.find((e) => e.key == "rarity")
                               .value == "LEGENDARY" &&
                             getid.category == "Nature"
                           ? "font-bold text-yellow-600 pt-32 text-4xl shadow-2xl absolute model-background-color rounded-b-md "
@@ -110,6 +127,15 @@ export default function model({ setCardmodel, getid }) {
                     <p className="font-bold text-black text-4xl  pt-72 absolute ">
                       {getid.description}
                     </p>
+                    <hr className="w-[400px] border-black	 border-4 mt-[430px] absolute " />
+                    {/* <p className="font-bold text-black text-2xl  pt-[440px] absolute ">
+                      Detail for the card's
+                    </p>
+                    <div className="font-bold text-black text-2xl  pt-[470px] absolute ">
+                      <p>{newdata.id}</p>
+                      <p>{newdata.category}</p>
+                      <p>{newdata.createdAt}</p>
+                    </div> */}
                   </div>
                   <div className="mb-6 mt-6">
                     <button
@@ -139,9 +165,9 @@ export default function model({ setCardmodel, getid }) {
                             ? "border-blue-500 text-blue-500"
                             : getid?.skinMeta.find(
                                 (newitem) => newitem.key == "rarity"
-                              ).value == "ULTRA" &&
-                              getid.category == "Movies & TV"
-                            ? "border-blue-600 text-blue-600"
+                              ).value == "PREMIUM" &&
+                              getid.title == "Moon Above sky"
+                            ? "border-blue-400 text-blue-400"
                             : getid?.skinMeta.find(
                                 (newitem) => newitem.key == "rarity"
                               ).value == "LEGENDARY" &&
@@ -159,7 +185,11 @@ export default function model({ setCardmodel, getid }) {
                                 (newitem) => newitem.key == "rarity"
                               ).value == "DELUXE" && getid.category == "Nature"
                             ? "border-red-600 text-red-600"
-                            : "udjnvjdb"
+                            : // : getid?.skinMeta.find(
+                              //     (newitem) => newitem.key == "rarity"
+                              //   ).value == "DELUXE" && getid.title == "JellyFish"
+                              // ? "border-blue-600 text-blue-600"
+                              "udjnvjdb"
                         }
                         border-2 text-2xl w-32 h-12  font-thin rounded-md `}
                     >

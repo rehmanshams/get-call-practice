@@ -12,7 +12,7 @@ export default function Home() {
       // setGetdataone(res.data.categoryData);
     });
   }, []);
-  console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
+  // console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
   // console.log(getdatao , "udigubduigbruibg")
   // console.log(getdata, "hbsbjkbfgjf");
   return (
@@ -25,7 +25,7 @@ export default function Home() {
           </div>
           <div className="grid-container">
             {getdata?.Anime?.map((item) => {
-              console.log("item", item);
+              // console.log("item", item);
               // key= {keyid}
               // console.log(item);
               return (
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
           <div className="flex">
             {getdata?.["Movies & TV"]?.map((item) => {
-              console.log("item", item);
+              // console.log("item", item);
 
               return (
                 <>
@@ -174,7 +174,7 @@ export default function Home() {
                                 .value == "STANDARD"
                             ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
-                                .value == "ULTRA"
+                                .value == "PREMIUM"
                             ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md transition duration-300 "
                             : "foidgub"
                         }`}
@@ -260,7 +260,7 @@ export default function Home() {
           </div>
           <div className="grid-container ">
             {getdata?.Nature?.map((item) => {
-              console.log("seeingthatistheitem", item);
+              // console.log("seeingthatistheitem", item);
               return (
                 <>
                   <div className="flex justify-center w-full  h-full">
