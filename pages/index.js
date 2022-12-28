@@ -12,7 +12,7 @@ export default function Home() {
       // setGetdataone(res.data.categoryData);
     });
   }, []);
-  // console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
+  console.log(getdata, "ldfjnfjkdbsjkgbdjkb");
   // console.log(getdatao , "udigubduigbruibg")
   // console.log(getdata, "hbsbjkbfgjf");
   return (
@@ -52,13 +52,13 @@ export default function Home() {
                         className={`${
                           item?.skinMeta.find((e) => e.key == "rarity").value ==
                           "DELUXE"
-                            ? " font-bold text-purple-500 pl-10 pt-8 absolute for-background-color rounded-b-md "
+                            ? " font-bold text-purple-500 pl-10 pt-8 absolute for-background-color transition duration-300 ease-in-out rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "ULTRA"
-                            ? " font-bold text-green-400 pl-10 pt-8 absolute for-background-color-two for-background-color rounded-b-md "
+                            ? " font-bold text-green-400 pl-10 pt-8 absolute for-background-color-two for-background-color transition duration-300 rounded-b-md "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "PREMIUM"
-                            ? "font-bold text-red-600 pl-10 pt-8 absolute  for-background-color-one for-background-color rounded-b-md  "
+                            ? "font-bold text-red-600 pl-10 pt-8 absolute  for-background-color-one for-background-color rounded-b-md  transition duration-300"
                             : "foidgub"
                         }`}
                       >
@@ -169,13 +169,13 @@ export default function Home() {
                         className={`${
                           item?.skinMeta.find((e) => e.key == "rarity").value ==
                           "LEGENDARY"
-                            ? " font-bold text-red-500 pl-10 pt-8 absolute for-background-color-one for-background-color rounded-b-md "
+                            ? " font-bold text-red-500 pl-10 pt-8 absolute for-background-color-one for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "STANDARD"
-                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
+                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "ULTRA"
-                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
+                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md transition duration-300 "
                             : "foidgub"
                         }`}
                       >
@@ -285,19 +285,19 @@ export default function Home() {
                         className={`${
                           item?.skinMeta.find((e) => e.key == "rarity").value ==
                           "LEGENDARY"
-                            ? " font-bold text-yellow-600 pl-10 pt-8 absolute for-background-color-oneoene for-background-color rounded-b-md "
+                            ? " font-bold text-yellow-600 pl-10 pt-8 absolute for-background-color-oneoene for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "STANDARD"
-                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md "
+                            ? " font-bold text-blue-400 pl-10 pt-8 absolute for-background-color-new for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "ULTRA"
-                            ? " font-bold text-pink-400 pl-10 pt-8 absolute for-background-color-newone for-background-color rounded-b-md "
+                            ? " font-bold text-pink-400 pl-10 pt-8 absolute for-background-color-newone for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "DELUXE"
-                            ? " font-bold text-red-700 pl-10 pt-8 absolute for-background-color-onenewone for-background-color rounded-b-md "
+                            ? " font-bold text-red-700 pl-10 pt-8 absolute for-background-color-onenewone for-background-color rounded-b-md transition duration-300 "
                             : item?.skinMeta.find((e) => e.key == "rarity")
                                 .value == "PREMIUM"
-                            ? " font-bold text-yellow-400 pl-10 pt-8 absolute for-background-color-yellownewone for-background-color rounded-b-md "
+                            ? " font-bold text-yellow-400 pl-10 pt-8 absolute for-background-color-yellownewone for-background-color rounded-b-md transition duration-300 "
                             : "foidgub"
                         }`}
                       >

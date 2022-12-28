@@ -27,6 +27,9 @@ export default function model({ setCardmodel, getid }) {
                   "LEGENDARY" && getid.category == "Nature"
               ? "bg-yellow-200 fixed inset-0  bg-opacity-70 transition-opacity"
               : getid?.skinMeta.find((e) => e.key == "rarity").value ==
+                  "PREMIUM" && getid.category == "Nature"
+              ? "bg-yellow-300 fixed inset-0  bg-opacity-70 transition-opacity"
+              : getid?.skinMeta.find((e) => e.key == "rarity").value ==
                   "ULTRA" && getid.category == "Nature"
               ? "bg-pink-300 fixed inset-0  bg-opacity-70 transition-opacity"
               : getid?.skinMeta.find((e) => e.key == "rarity").value ==
