@@ -6,12 +6,12 @@ export default function model({ setCardmodel, getid }) {
   //   return _item.value;
   // });
   // console.log("data",data)
-let myArray=[];
-        for (let index = 0; index < getid.skinMeta.length; index++) {
-      myArray.push(getid.skinMeta[index].value);
-    }
-    console.log("myArray", myArray);
-    return (
+  let myArray = [];
+  for (let index = 0; index < getid.skinMeta.length; index++) {
+    myArray.push(getid.skinMeta[index].value);
+  }
+  console.log("myArray", myArray);
+  return (
     <>
       <div
         className="relative z-20 w-full bg-zinc-500"
@@ -127,7 +127,7 @@ let myArray=[];
                     <p className="font-bold text-black text-4xl  pt-72 absolute ">
                       {getid.description}
                     </p>
-                    <hr className="w-[400px] border-black	 border-4 mt-[430px] absolute " />
+                    {/* <hr className="w-[400px] border-black	 border-4 mt-[430px] absolute " /> */}
                     {/* <p className="font-bold text-black text-2xl  pt-[440px] absolute ">
                       Detail for the card's
                     </p>
